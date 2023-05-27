@@ -5,14 +5,19 @@ import logo from '../Images/logo.png';
 import ticket from '../Images/ticket.png';
 import { StyledContainer, StyledTextHome, StyledText, StyledImage, StyledContainer2 } from "../StyledComponents/styles";
 import ButtonStartsNow from "../Components/ButtonStartsNow";
+import { Link } from "react-router-dom";
+import BottonHomeSpecialist from "../Components/BottonHomeSpecialist";
 
 export default function Home(){
   return(
     <>
+      <BottonHomeSpecialist />
       <StyledContainer2>
         <img src={logo} alt="logo-program" />
         <p>{ textAffiliatedProgram }</p>
-        <FontAwesomeIcon icon={faBars} />
+        <Link to="/menu">
+          <FontAwesomeIcon icon={faBars} />
+        </Link>
       </StyledContainer2>
       <hr />
       <StyledTextHome>

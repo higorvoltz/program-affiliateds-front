@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 
 export const StyledBottonHomeSpecialist = styled.div`
   height: 78px;
@@ -92,5 +94,75 @@ export const StyledButton = styled.button`
   width: 197px;
   margin-top: 15px;
   margin-left: 20px;
+`;
+
+export const StyledButton1 = styled.button`
+  background-color: #F04E23;
+  color: #ffffff;
+  border: none;
+  padding: 13px 21px;
+  border-radius: 5px;
+  height: 48px;
+  width: 197px;
+  margin-top: 15px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledButton2 = styled.button`
+  background-color: #F04E23;
+  color: #ffffff;
+  border: none;
+  padding: 13px 21px;
+  border-radius: 5px;
+  height: 48px;
+  width: 197px;
+  margin-top: 15px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledButton3 = styled.button`
+  background-color: #F04E23;
+  color: #ffffff;
+  border: none;
+  padding: 13px 21px;
+  border-radius: 5px;
+  height: 48px;
+  width: 197px;
+  margin-top: 15px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const StyledContainer3 = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #ffffff;
+
+  h1 {
+    color: #000000;
+    font-size: 24px;
+    margin: 10px;
+  }
+
+  p {
+    color: #000000;
+    font-size: 24px;
+    margin: 0;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #ffffff;
 `;
 
