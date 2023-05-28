@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 
-export default function Productors() {
+
+function Productors(): JSX.Element {
   return (
-    <>
-      <div>Criadores</div>
+    <div>
+      <h1>Productors</h1>
       <Link to="/home">
         <p>Voltar</p>
       </Link>
-    </>
+    </div>
   );
 }
+
+export default Productors;

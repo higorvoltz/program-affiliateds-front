@@ -9,6 +9,7 @@ import BuyCourse from './Pages/BuyCourse';
 import Productors from './Pages/Productors';
 import Helper from './Pages/Helper';
 import Clients from './Pages/Clients';
+import AdminArea from './Pages/AdminArea';
 export default function App(){
   return(
     <>
@@ -25,6 +26,7 @@ export default function App(){
           <Route path="/criadores" element={ <Productors/> } />
           <Route path="/ajuda" element={ <Helper/> } />
           <Route path="/clientes" element={ <Clients/> } />
+          <Route path="/adm" element={ <AdminArea/> } />
         </Routes>
       </BrowserRouter>
     </>

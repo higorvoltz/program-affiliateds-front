@@ -61,6 +61,12 @@ export default function Menu(){
           </Link>
       </StyledContainer3>
       <hr />
+      <StyledContainer3>
+          <Link to="/adm">
+            <h1>Área administrativa</h1>
+          </Link>
+      </StyledContainer3>
+      <hr />
       <StyledButton1>
         <Link to="/afiliados">
           <p>Começar Gratuitamente</p>
