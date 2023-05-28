@@ -1,3 +1,43 @@
+import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+
+
 export default function Checkout() {
-  return <div>Checkout</div>;
+  const [selectedOption, setSelectedOption] = useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedOption(event.target.value);
+  };
+  // TODO: incluir dados do cliente
+  // TODO: incluit dados do produto
+  // TODO: incluir método de busca por nome na api
+  // TODO: incluir esse método no front e aqui no checkout usá-lo
+  // para permitir a busca do productor/affiliated para gerar a venda
+  // parametros de venda:
+  // {
+  //  "sale_item_id": 3,
+  //  "productor_affiliated_id": 2,
+  //  "transaction_type_id": 3,
+  //  "seller_type": "Affiliated",
+  //  "seller_id": 2
+  //  }
+  return(
+    <>
+      <div>Checkout</div>
+      <div>Dados do cliente</div>
+      <div>Dados do Produto</div>
+      <div>
+        <label htmlFor="offers-selection">Quem te indicou o produto?</label>
+          <select id="offers-selection" value={selectedOption} onChange={handleChange}>
+            <option value="">Escolha uma opção</option>
+            <option value="yes">Ninguém</option>
+            <option value="no">Uma pessoa</option>
+          </select>
+      </div>
+      <button>Confirmar</button>
+      <Link to="/comprar">
+        Voltar
+      </Link>
+    </>
+  )
 }
