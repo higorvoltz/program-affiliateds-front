@@ -166,3 +166,41 @@ export const StyledLink = styled(Link)`
   color: #ffffff;
 `;
 
+export const ProductList = styled.ul`
+  list-style: none;
+  margin: 10px;
+  padding: 10px 20px;
+`;
+
+export const ProductListItem = styled.li<{ even: boolean }>`
+  display: flex;
+  justify-content: space-between;
+  background-color: ${({ even }) => (even ? '#f2f2f2': '#ffffff')};
+  padding: 10px;
+`;
+
+export const ProductListItemHeader = styled.div`
+  padding: 10px;
+  background-color: #FA7878;
+`;
+
+export const ProductHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  flex: 1;
+`;
+
+export const ProductName = styled.span`
+  flex: 1;
+`;
+
+export const ProductPrice = styled.span`
+  margin-left: 8px;
+`;
+
+export const Title = styled.span`
+  display: flex;
+  font-weight: bold;
+  text-align: center;
+`;
