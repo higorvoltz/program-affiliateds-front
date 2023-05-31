@@ -204,3 +204,12 @@ export const Title = styled.span`
   font-weight: bold;
   text-align: center;
 `;
+
+export const HeaderCheck = styled.h1`
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  height: 68px;
+  background-color: #77E86D;
+  color: #ffffff;
+`;

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
+import { HeaderCheck } from "../StyledComponents/styles";
+import { Formik, Form, Field } from 'formik';
+import * as yup from 'yup';
 
 
 export default function Checkout() {
@@ -8,6 +11,16 @@ export default function Checkout() {
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(event.target.value);
   };
+
+  const initialValues = {
+    name: '',
+    price: 0,
+  }
+
+  const validationSchema = yup.object({
+    name: yup.string().required('product name is required'),
+    price: yup.string().required('price is required'),
+  });
   // TODO: incluir dados do cliente
   // TODO: incluit dados do produto
   // TODO: incluir método de busca por nome na api
@@ -23,9 +36,10 @@ export default function Checkout() {
   //  }
   return(
     <>
-      <div>Checkout</div>
+      <HeaderCheck>Checkout</HeaderCheck>
       <div>Dados do cliente</div>
-      <div>Dados do Produto</div>
+      <h2>Dados do Produto</h2>
+
       <div>
         <label htmlFor="offers-selection">Quem te indicou o produto?</label>
           <select id="offers-selection" value={selectedOption} onChange={handleChange}>
