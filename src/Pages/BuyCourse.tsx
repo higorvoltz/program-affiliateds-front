@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Product, ProductsState } from "../Interfaces/interfaces";
+import { Product, ProductsState } from "../Interfaces";
 import { getProducts } from "../Requests/Products/api";
 import {
   ProductHeader,

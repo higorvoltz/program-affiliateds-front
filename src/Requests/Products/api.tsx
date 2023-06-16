@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Product } from '../../Interfaces/interfaces';
+import { Product } from '../../Interfaces';
 
 const baseUrl = 'http://localhost:3001/api/v1/';
 

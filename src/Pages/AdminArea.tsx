@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { getProductors } from '../Requests/Productors/api';
-import { ProductorsState } from '../Interfaces/interfaces';
+import { ProductorsState } from '../Interfaces';
 
 
 function AdminArea(): JSX.Element{
