@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 
 
@@ -111,6 +111,52 @@ export const StyledButton1 = styled.button`
   align-items: center;
 `;
 
+export const StyledButtonBuyCourse = styled.button`
+  background-color: #a54170;
+  color: #000000;
+  border: none;
+  padding: 13px 21px;
+  border-radius: 5px;
+  height: 24px;
+  width: 100px;
+  margin-top: 15px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 2px 2px #888;
+
+  &:hover {
+    background-color: #6e2c5a;
+    color: #ffffff;
+    box-shadow: 3px 3px #888;
+  }
+`;
+
+export const StyledButtonBuyCoursev2 = styled.button`
+  background-color: #a54170;
+  color: #000000;
+  border: none;
+  padding: 13px 21px;
+  border-radius: 5px;
+  height: 24px;
+  width: 100px;
+  margin-top: 15px;
+  margin-left: 100px;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  cursor: pointer;
+  box-shadow: 2px 2px #888;
+
+  &:hover {
+    background-color: #6e2c5a;
+    color: #ffffff;
+    box-shadow: 3px 3px #888;
+  }
+`;
+
 export const StyledButton2 = styled.button`
   background-color: #F04E23;
   color: #ffffff;
@@ -203,6 +249,8 @@ export const Title = styled.span`
   display: flex;
   font-weight: bold;
   text-align: center;
+  margin-left: 10px;
+  margin-top: 10px;
 `;
 
 export const HeaderCheck = styled.h1`
@@ -212,4 +260,34 @@ export const HeaderCheck = styled.h1`
   height: 68px;
   background-color: #77E86D;
   color: #ffffff;
+`;
+
+export const Border = styled.div`
+${css`
+  border: 1px solid black;
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  padding: 10px 10px;
+`}
+`;
+
+export const SubTitle = styled.div`
+  margin-left: 10px;
+  margin-right: 10px;
+`;
+
+export const Margin = styled.div`
+  margin-left: 10px;
+  margin-bottom: 10px;
+`;
+
+export const MarginForm = styled.div`
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
 `;

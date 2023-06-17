@@ -3,14 +3,25 @@ import { useState, useEffect } from "react";
 import { Product, ProductsState } from "../Interfaces";
 import { getProducts } from "../Requests/Products/api";
 import {
+  Border,
+  Margin,
   ProductHeader,
   ProductList,
   ProductListItem,
   ProductListItemHeader,
   ProductName,
   ProductPrice,
+  StyledButton1,
+  StyledButtonBuyCourse,
+  SubTitle,
   Title,
 } from "../StyledComponents/styles";
+import {
+  ListProductsRegistred,
+  back,
+  buyCourse,
+  product,
+} from "../pt-BR/contants";
 
 function formatCurrency(value: number) {
   const remainingCents = value % 100;
@@ -46,33 +57,39 @@ function BuyCourse() {
   };
   return (
     <>
-      <Title>
-        <span>Compre um produto digital</span>
-      </Title>
-      <h3>Lista de Produtos Cadastrados</h3>
-      <ProductList>
-        <ProductListItemHeader>
-          <ProductHeader>
-            <ProductName>Product</ProductName>
-            <ProductPrice>Price</ProductPrice>
-          </ProductHeader>
-        </ProductListItemHeader>
-        {state.products.map((product, index) => (
-          <ProductListItem
-            key={product.id}
-            even={index % 2 === 0}
-            onClick={() => handleProductClick(product)}
-          >
-            <ProductName>{product.name}</ProductName>
-            <ProductPrice>{formatCurrency(product.price)}</ProductPrice>
-          </ProductListItem>
-        ))}
-      </ProductList>
-      <Link to="/home">
-        <p>Voltar</p>
-      </Link>
+      <Border>
+        <Title>
+          <span>{buyCourse}</span>
+        </Title>
+        <SubTitle>
+          <h3>{ListProductsRegistred}</h3>
+        </SubTitle>
+        <ProductList>
+          <ProductListItemHeader>
+            <ProductHeader>
+              <ProductName>{product}</ProductName>
+              <ProductPrice>Price</ProductPrice>
+            </ProductHeader>
+          </ProductListItemHeader>
+          {state.products.map((product, index) => (
+            <ProductListItem
+              key={product.id}
+              even={index % 2 === 0}
+              onClick={() => handleProductClick(product)}
+            >
+              <ProductName>{product.name}</ProductName>
+              <ProductPrice>{formatCurrency(product.price)}</ProductPrice>
+            </ProductListItem>
+          ))}
+        </ProductList>
+        <Link to="/home">
+          <Margin>
+            <StyledButtonBuyCourse>{back}</StyledButtonBuyCourse>
+          </Margin>
+        </Link>
+      </Border>
     </>
   );
-};
+}
 
 export default BuyCourse;
