@@ -42,7 +42,7 @@ export interface Client {
 }
 
 export interface ClientsState {
-  Clients: Client[];
+  clients: Client[];
 }
 
 export interface SaleItem {

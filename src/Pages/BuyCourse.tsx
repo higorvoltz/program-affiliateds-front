@@ -11,7 +11,6 @@ import {
   ProductListItemHeader,
   ProductName,
   ProductPrice,
-  StyledButton1,
   StyledButtonBuyCourse,
   SubTitle,
   Title,

@@ -218,6 +218,12 @@ export const ProductList = styled.ul`
   padding: 10px 20px;
 `;
 
+export const ProductorsList = styled.ul`
+  list-style: none;
+  margin: 10px;
+  padding: 10px 20px;
+`;
+
 export const ProductListItem = styled.li<{ even: boolean }>`
   display: flex;
   justify-content: space-between;
