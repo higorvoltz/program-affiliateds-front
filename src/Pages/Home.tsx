@@ -16,6 +16,8 @@ import {
   StyledImage,
   StyledContainer2,
   Border,
+  MarginRight,
+  Titlev2,
 } from "../StyledComponents/styles";
 import ButtonStartsNow from "../Components/ButtonStartsNow";
 import { Link } from "react-router-dom";
@@ -29,13 +31,17 @@ export default function Home() {
         <StyledContainer2>
           <img src={logo} alt="logo-program" />
           <p>{textAffiliatedProgram}</p>
-          <Link to="/menu">
-            <FontAwesomeIcon icon={faBars} />
-          </Link>
+          <MarginRight>
+            <Link to="/menu">
+              <FontAwesomeIcon icon={faBars} />
+            </Link>
+          </MarginRight>
         </StyledContainer2>
         <hr />
         <StyledTextHome>
-          <p>{textTransform}</p>
+          <Titlev2>
+            <span>{textTransform}</span>
+          </Titlev2>
           <StyledContainer>
             <StyledImage src={ticket} alt="ticket" />
             <StyledText>{textDigitalProduct}</StyledText>

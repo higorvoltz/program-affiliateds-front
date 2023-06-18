@@ -12,8 +12,8 @@ export const StyledBottonHomeSpecialist = styled.div`
 
   p {
     color: #FFFFFF;
-    margin-right: 10px;
-    margin-bottom: -1px;
+    margin-left: 10px;
+    margin-bottom: -10px;
   }
 
   button {
@@ -32,6 +32,7 @@ export const StyledContainer = styled.div`
   align-items: center;
   margin-left: 20px;
   gap: 5px;
+  padding: 10px 10px;
 `;
 
 export const StyledContainer2 = styled.div`
@@ -56,6 +57,7 @@ export const StyledContainer2 = styled.div`
 export const StyledTextHome = styled.div`
   background-color: #8B4513;
   height: 278px;
+  padding: 10px 10px;
 
 
   p {
@@ -108,7 +110,7 @@ export const StyledButton1 = styled.button`
   margin-left: 100px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: left;
 `;
 
 export const StyledButtonBuyCourse = styled.button`
@@ -259,6 +261,16 @@ export const Title = styled.span`
   margin-top: 10px;
 `;
 
+export const Titlev2 = styled.span`
+  display: flex;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 20px;
+  font-size: 20px;
+  color: white;
+`;
+
 export const HeaderCheck = styled.h1`
   font-weight: bold;
   font-size: 20px;
@@ -266,6 +278,7 @@ export const HeaderCheck = styled.h1`
   height: 68px;
   background-color: #77E86D;
   color: #ffffff;
+  padding: 10px 10px;
 `;
 
 export const Border = styled.div`
@@ -296,4 +309,8 @@ export const MarginForm = styled.div`
   display: flex;
   flex-direction: column;
   align-items: left;
+`;
+
+export const MarginRight = styled.div`
+  margin-right: 10px;
 `;
