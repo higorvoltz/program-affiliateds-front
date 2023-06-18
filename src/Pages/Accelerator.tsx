@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom";
+import {
+  Border,
+  Margin,
+  StyledButtonBuyCourse,
+  Title,
+} from "../StyledComponents/styles";
+import { accelerator, back } from "../pt-BR/contants";
 
 export default function Accelerator() {
   return (
     <>
-      <div>Accelerator</div>
-      <Link to="/home">
-        <p>Voltar</p>
-      </Link>
+      <Border>
+        <Title>
+          <span>{accelerator}</span>
+        </Title>
+        <Link to="/home">
+          <Margin>
+            <StyledButtonBuyCourse>{back}</StyledButtonBuyCourse>
+          </Margin>
+        </Link>
+      </Border>
     </>
   );
 }

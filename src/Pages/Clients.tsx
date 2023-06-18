@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom";
+import {
+  Border,
+  Margin,
+  StyledButtonBuyCourse,
+  Title,
+} from "../StyledComponents/styles";
+import { back, clientArea } from "../pt-BR/contants";
 
 export default function Clients() {
   return (
     <>
-      <div>área do cliente</div>
-      <Link to="/home">
-        <p>Voltar</p>
-      </Link>
+      <Border>
+        <Title>
+          <span>{clientArea}</span>
+        </Title>
+        <Link to="/home">
+          <Margin>
+            <StyledButtonBuyCourse>{back}</StyledButtonBuyCourse>
+          </Margin>
+        </Link>
+      </Border>
     </>
   );
 }

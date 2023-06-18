@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom";
+import {
+  Border,
+  Margin,
+  StyledButtonBuyCourse,
+  Title,
+} from "../StyledComponents/styles";
+import { back, solutions } from "../pt-BR/contants";
 
 export default function Solutions() {
   return (
     <>
-      <div>Soluções</div>
-      <Link to="/home">
-        <p>Voltar</p>
-      </Link>
+      <Border>
+        <Title>
+          <span>{solutions}</span>
+        </Title>
+        <Link to="/home">
+          <Margin>
+            <StyledButtonBuyCourse>{back}</StyledButtonBuyCourse>
+          </Margin>
+        </Link>
+      </Border>
     </>
   );
 }

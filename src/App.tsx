@@ -29,6 +29,7 @@ export default function App(){
           <Route path="/clientes" element={ <Clients/> } />
           <Route path="/adm" element={ <AdminArea/> } />
           <Route path="/checkout" element={ <Checkout/> } />
+          <Route path="/central" element={ <Helper/> } />
         </Routes>
       </BrowserRouter>
     </>
