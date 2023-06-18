@@ -1,4 +1,4 @@
-import { HeaderCheck } from "../StyledComponents/styles";
+import { HeaderCheck } from "../StyledComponents";
 
 export default function HeaderCheckout() {
   return (

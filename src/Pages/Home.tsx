@@ -4,7 +4,7 @@ import {
   textSet,
   textTool,
   textTransform,
-} from "../pt-BR/contants";
+} from "../pt-BR";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import logo from "../Images/logo.png";
@@ -18,7 +18,7 @@ import {
   Border,
   MarginRight,
   Titlev2,
-} from "../StyledComponents/styles";
+} from "../StyledComponents";
 import ButtonStartsNow from "../Components/ButtonStartsNow";
 import { Link } from "react-router-dom";
 import BottonHomeSpecialist from "../Components/BottonHomeSpecialist";

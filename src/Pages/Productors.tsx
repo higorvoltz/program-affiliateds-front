@@ -13,7 +13,7 @@ import {
   productors,
   ranking,
   send,
-} from "../pt-BR/contants";
+} from "../pt-BR";
 import {
   Border,
   Margin,
@@ -21,7 +21,7 @@ import {
   StyledButtonBuyCourse,
   SubTitle,
   Title,
-} from "../StyledComponents/styles";
+} from "../StyledComponents";
 
 const validationSchema = yup.object({
   name: yup.string().required("product name is required"),

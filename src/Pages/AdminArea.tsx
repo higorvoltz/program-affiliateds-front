@@ -14,7 +14,7 @@ import {
   StyledButtonBuyCourse,
   SubTitle,
   Title,
-} from "../StyledComponents/styles";
+} from "../StyledComponents";
 import {
   adminArea,
   affiliated,
@@ -27,7 +27,7 @@ import {
   creatorsData,
   productorAffiliated,
   productorAffiliatedData,
-} from "../pt-BR/contants";
+} from "../pt-BR";
 import { getAffiliateds } from "../Requests/Affiliateds/api";
 import { getClients } from "../Requests/Clients/api";
 import { getProductorAffiliateds } from "../Requests/ProductorAffiliateds/api";

@@ -5,10 +5,10 @@ import {
   HeaderCheck,
   Margin,
   StyledButtonBuyCourse,
-} from "../StyledComponents/styles";
+} from "../StyledComponents";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
-import { back } from "../pt-BR/contants";
+import { back } from "../pt-BR";
 
 export default function Checkout() {
   const [selectedOption, setSelectedOption] = useState("");

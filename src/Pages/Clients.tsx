@@ -4,8 +4,8 @@ import {
   Margin,
   StyledButtonBuyCourse,
   Title,
-} from "../StyledComponents/styles";
-import { back, clientArea } from "../pt-BR/contants";
+} from "../StyledComponents";
+import { back, clientArea } from "../pt-BR";
 
 export default function Clients() {
   return (

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { StyledButton } from "../StyledComponents/styles";
-import { buttonStartsNow } from "../pt-BR/contants";
+import { StyledButton } from "../StyledComponents";
+import { buttonStartsNow } from "../pt-BR";
 
 export default function ButtonStartsNow(){
   return(

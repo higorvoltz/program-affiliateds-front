@@ -4,8 +4,8 @@ import {
   Margin,
   StyledButtonBuyCourse,
   Title,
-} from "../StyledComponents/styles";
-import { academy, back } from "../pt-BR/contants";
+} from "../StyledComponents";
+import { academy, back } from "../pt-BR";
 
 export default function Academy() {
   return (

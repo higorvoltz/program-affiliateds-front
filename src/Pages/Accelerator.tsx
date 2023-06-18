@@ -4,8 +4,8 @@ import {
   Margin,
   StyledButtonBuyCourse,
   Title,
-} from "../StyledComponents/styles";
-import { accelerator, back } from "../pt-BR/contants";
+} from "../StyledComponents";
+import { accelerator, back } from "../pt-BR";
 
 export default function Accelerator() {
   return (

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { StyledBottonHomeSpecialist } from "../StyledComponents/styles";
+import { StyledBottonHomeSpecialist } from "../StyledComponents";
 import {
   bottonHomeSpecialist,
   bottonHomeSpecialistValue,
-} from "../pt-BR/contants";
+} from "../pt-BR";
 
 export default function BottonHomeSpecialist() {
   return (

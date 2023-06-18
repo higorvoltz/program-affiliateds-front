@@ -4,8 +4,8 @@ import {
   Margin,
   StyledButtonBuyCourse,
   Title,
-} from "../StyledComponents/styles";
-import { back, solutions } from "../pt-BR/contants";
+} from "../StyledComponents";
+import { back, solutions } from "../pt-BR";
 
 export default function Solutions() {
   return (

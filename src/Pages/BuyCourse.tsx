@@ -14,13 +14,13 @@ import {
   StyledButtonBuyCourse,
   SubTitle,
   Title,
-} from "../StyledComponents/styles";
+} from "../StyledComponents";
 import {
   ListProductsRegistred,
   back,
   buyCourse,
   product,
-} from "../pt-BR/contants";
+} from "../pt-BR";
 
 function formatCurrency(value: number) {
   const remainingCents = value % 100;

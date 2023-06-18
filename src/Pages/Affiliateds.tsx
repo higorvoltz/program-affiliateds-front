@@ -4,8 +4,8 @@ import {
   Margin,
   StyledButtonBuyCourse,
   Title,
-} from "../StyledComponents/styles";
-import { affiliatedDisplay, back } from "../pt-BR/contants";
+} from "../StyledComponents";
+import { affiliatedDisplay, back } from "../pt-BR";
 
 export default function Affiliateds() {
   return (

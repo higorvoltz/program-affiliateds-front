@@ -4,8 +4,8 @@ import {
   Margin,
   StyledButtonBuyCourse,
   Title,
-} from "../StyledComponents/styles";
-import { back, helper } from "../pt-BR/contants";
+} from "../StyledComponents";
+import { back, helper } from "../pt-BR";
 
 export default function Helper() {
   return (

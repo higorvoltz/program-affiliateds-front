@@ -5,7 +5,7 @@ import {
   StyledButton2,
   StyledButton3,
   StyledContainer3,
-} from "../StyledComponents/styles";
+} from "../StyledComponents";
 
 export default function Menu() {
   return (
