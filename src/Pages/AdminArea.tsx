@@ -24,16 +24,16 @@ import {
 } from "../StyledComponents";
 import {
   adminArea,
-  affiliated,
   affiliatedsData,
+  affiliatedv2,
   back,
   balance,
-  client,
   clientsData,
+  clientv2,
   creator,
   creatorsData,
-  productorAffiliated,
   productorAffiliatedData,
+  productorAffiliatedv2,
   productsData,
   productsHeader,
 } from "../pt-BR";
@@ -41,12 +41,13 @@ import { getAffiliateds } from "../Requests/Affiliateds/api";
 import { getClients } from "../Requests/Clients/api";
 import { getProductorAffiliateds } from "../Requests/ProductorAffiliateds/api";
 import { getProducts } from "../Requests/Products/api";
+import { formatCurrency } from "../utils/currency/currency";
 
 function AdminArea(): JSX.Element {
-  const [state, setState] = useState<ProductorsState>({ productors: [] });
-  const [statev2, setStatev2] = useState<AffiliatedsState>({ affiliateds: [] });
-  const [statev3, setStatev3] = useState<ClientsState>({ clients: [] });
-  const [statev4, setStatev4] = useState<ProductorAffiliatedsState>({
+  const [product, setProduct] = useState<ProductorsState>({ productors: [] });
+  const [affiliated, setAffiliated] = useState<AffiliatedsState>({ affiliateds: [] });
+  const [client, setClient] = useState<ClientsState>({ clients: [] });
+  const [productorAffiliated, setProductorAffiliated] = useState<ProductorAffiliatedsState>({
     productorAffiliateds: [],
   });
   const [statev5, setStatev5] = useState<ProductsState>({ products: [] });
@@ -54,7 +55,7 @@ function AdminArea(): JSX.Element {
   useEffect(() => {
     async function fetchData(): Promise<void> {
       const productors = await getProductors();
-      setState({ productors });
+      setProduct({ productors });
     }
     fetchData();
   }, []);
@@ -62,7 +63,7 @@ function AdminArea(): JSX.Element {
   useEffect(() => {
     async function fetchData(): Promise<void> {
       const affiliateds = await getAffiliateds();
-      setStatev2({ affiliateds });
+      setAffiliated({ affiliateds });
     }
     fetchData();
   }, []);
@@ -70,7 +71,7 @@ function AdminArea(): JSX.Element {
   useEffect(() => {
     async function fetchData(): Promise<void> {
       const clients = await getClients();
-      setStatev3({ clients });
+      setClient({ clients });
     }
     fetchData();
   }, []);
@@ -78,7 +79,7 @@ function AdminArea(): JSX.Element {
   useEffect(() => {
     async function fetchData(): Promise<void> {
       const productorAffiliateds = await getProductorAffiliateds();
-      setStatev4({ productorAffiliateds });
+      setProductorAffiliated({ productorAffiliateds });
     }
     fetchData();
   }, []);
@@ -90,6 +91,7 @@ function AdminArea(): JSX.Element {
     }
     fetchData();
   }, []);
+
   return (
     <>
       <Border>
@@ -106,10 +108,10 @@ function AdminArea(): JSX.Element {
               <ProductPrice>{balance}</ProductPrice>
             </ProductHeader>
           </ProductListItemHeader>
-          {state.productors.map((productor, index) => (
+          {product.productors.map((productor, index) => (
             <ProductListItem key={productor.id} even={index % 2 === 0}>
-              {productor.id} {productor.name} ({productor.email})- Balance: $
-              {productor.balance}
+              id Produtor: {productor.id} | nome: {productor.name} | email: {productor.email} | Balance: $
+              {formatCurrency(productor.balance)}
             </ProductListItem>
           ))}
         </ProductorsList>
@@ -119,14 +121,14 @@ function AdminArea(): JSX.Element {
         <ProductorsList>
           <ProductListItemHeader>
             <ProductHeader>
-              <ProductName>{affiliated}</ProductName>
+              <ProductName>{affiliatedv2}</ProductName>
               <ProductPrice>{balance}</ProductPrice>
             </ProductHeader>
           </ProductListItemHeader>
-          {statev2.affiliateds.map((affiliated, index) => (
+          {affiliated.affiliateds.map((affiliated, index) => (
             <ProductListItem key={affiliated.id} even={index % 2 === 0}>
-              {affiliated.id} {affiliated.name} ({affiliated.email})- Balance: $
-              {affiliated.balance}
+              id Afiliado: {affiliated.id} | nome: {affiliated.name} | email: {affiliated.email} | Balance: $
+              {formatCurrency(affiliated.balance)}
             </ProductListItem>
           ))}
         </ProductorsList>
@@ -136,12 +138,12 @@ function AdminArea(): JSX.Element {
         <ProductorsList>
           <ProductListItemHeader>
             <ProductHeader>
-              <ProductName>{client}</ProductName>
+              <ProductName>{clientv2}</ProductName>
             </ProductHeader>
           </ProductListItemHeader>
-          {statev3.clients.map((client, index) => (
+          {client.clients.map((client, index) => (
             <ProductListItem key={client.id} even={index % 2 === 0}>
-              {client.name} ({client.email})
+              nome: {client.name} | email: {client.email}
             </ProductListItem>
           ))}
         </ProductorsList>
@@ -151,16 +153,16 @@ function AdminArea(): JSX.Element {
         <ProductorsList>
           <ProductListItemHeader>
             <ProductHeader>
-              <ProductName>{productorAffiliated}</ProductName>
+              <ProductName>{productorAffiliatedv2}</ProductName>
             </ProductHeader>
           </ProductListItemHeader>
-          {statev4.productorAffiliateds.map((productorAffiliated, index) => (
+          {productorAffiliated.productorAffiliateds.map((productorAffiliated, index) => (
             <ProductListItem
               key={productorAffiliated.id}
               even={index % 2 === 0}
             >
-              idAfiliado: {productorAffiliated.affiliated_id} cadastrado a
-              idProdutor: {productorAffiliated.productor_id}
+              id Afiliado: {productorAffiliated.affiliated_id} cadastrado a
+              id Produtor: {productorAffiliated.productor_id}
             </ProductListItem>
           ))}
         </ProductorsList>
@@ -175,8 +177,8 @@ function AdminArea(): JSX.Element {
           </ProductListItemHeader>
           {statev5.products.map((product, index) => (
             <ProductListItem key={product.id} even={index % 2 === 0}>
-              {product.id} | {product.name} | {product.price} |{" "}
-              {product.comission_value} | {product.last_sales}
+              id: {product.id} | nome: {product.name} | preço: {formatCurrency(product.price)} |
+              comissão: {formatCurrency(product.comission_value)} | últimas vendas: {product.last_sales}
             </ProductListItem>
           ))}
         </ProductorsList>
