@@ -110,7 +110,7 @@ function AdminArea(): JSX.Element {
           </ProductListItemHeader>
           {product.productors.map((productor, index) => (
             <ProductListItem key={productor.id} even={index % 2 === 0}>
-              id Produtor: {productor.id} | nome: {productor.name} | email: {productor.email} | Balance: $
+              id Produtor: {productor.id} | nome: {productor.name} | email: {productor.email} | Balance:
               {formatCurrency(productor.balance)}
             </ProductListItem>
           ))}

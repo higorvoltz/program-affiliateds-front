@@ -36,3 +36,4 @@ export const helper: String = 'Central de Ajuda';
 export const solutions: String = 'Soluções';
 export const productsData: String = 'Dados dos Produtos';
 export const productsHeader: String = 'id | Nome do Produto | Preço | Valor Comissão | Últimas Vendas';
+export const myDataProductor: String = 'Meus Dados Produtor';

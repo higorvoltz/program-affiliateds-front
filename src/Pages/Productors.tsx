@@ -2,11 +2,13 @@ import { Link } from "react-router-dom";
 import React, { useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
+import { Productor, ProductorsState } from "../Interfaces";
 import axios from "axios";
 import {
   back,
   comissionValue,
   createProduct,
+  myDataProductor,
   productName,
   productPrice,
   productorId,
@@ -54,12 +56,44 @@ function Productors(): JSX.Element {
       console.log(error);
     }
   };
+  const [state, setState] = useState<ProductorsState>({ productors: [] });
+  const [productorName, setProductorName] = useState<string>("");
+  const baseUrl = "http://localhost:3001/api/v1/";
+
+  async function searchProductorByName(name: string): Promise<Productor[]> {
+    try {
+      const response = await axios.get<Productor[]>(
+        `${baseUrl}productors/by-name/${name}`
+      );
+      return response.data;
+    } catch (error) {
+      console.log(error);
+      return [];
+    }
+  }
+
+  const handleSearch = async () => {
+    const result = await searchProductorByName(productorName);
+    setState({ productors: result });
+  };
+
   return (
     <>
       <Border>
         <Title>
           <span>{productors}</span>
         </Title>
+        <SubTitle>
+          <h3>{myDataProductor}</h3>
+          <label htmlFor="productorName">Produtor: </label>
+          <input
+            type="text"
+            id="productorName"
+            value={productorName}
+            onChange={(e) => setProductorName(e.target.value)}
+          />
+          <button onClick={handleSearch}>Buscar</button>
+        </SubTitle>
         <SubTitle>
           <h3>{createProduct}</h3>
         </SubTitle>

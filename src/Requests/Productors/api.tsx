@@ -23,6 +23,16 @@ export async function getProductorsById(id: number): Promise<Productor | null> {
     return null;}
 }
 
+export async function getProductorsByName(name: string): Promise<Productor | null> {
+  try {
+    const response = await axios.get<Productor>(`${baseUrl}productors${name}`);
+    return response.data;
+  } catch (error) {
+    console.log(error);
+    return null;
+  }
+}
+
 export async function addProductor(productor: Productor): Promise<void> {
   try {
     await axios.post(`${baseUrl}productors`, productor);
