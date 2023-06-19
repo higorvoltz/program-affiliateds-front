@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   Border,
+  SpeakSpecialist,
   StyledButton1,
   StyledButton2,
   StyledButton3,

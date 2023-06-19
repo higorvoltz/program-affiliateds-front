@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 
 export const StyledBottonHomeSpecialist = styled.div`
-  height: 78px;
+  height: 98px;
   background-color: #4EB41F;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,9 @@ export const StyledBottonHomeSpecialist = styled.div`
     color: #FFFFFF;
     margin-left: 10px;
     margin-bottom: -10px;
+    overflow: hidden; /* hide the overflow of the text */
+    white-space: nowrap; /* prevent the text from wrapping */
+    animation: typing 10s steps(32) infinite forwards; /* apply the animation */
   }
 
   button {
@@ -22,8 +25,35 @@ export const StyledBottonHomeSpecialist = styled.div`
     border: none;
     padding: 5px 10px;
     border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0; /* start with zero width */
+    }
+    to {
+      width: 100%; /* end with full width */
+    }
   }
 }`;
+
+export const StyledSpan = styled.span`
+  width: 100%; /* set the width to 100% */
+  overflow: hidden; /* hide the overflow of the text */
+  white-space: nowrap; /* prevent the text from wrapping */
+  animation: typing 6s steps(32) infinite forwards; /* apply the animation */
+
+  @keyframes typing {
+    from {
+      width: 0; /* start with zero width */
+    }
+    to {
+      width: 100%; /* end with full width */
+    }
+  }
+}`;
+
 
 export const StyledContainer = styled.div`
   display: flex;
@@ -313,4 +343,14 @@ export const MarginForm = styled.div`
 
 export const MarginRight = styled.div`
   margin-right: 10px;
+`;
+
+export const MarginTop = styled.div`
+  margin-top: 10px;
+`;
+
+export const SpeakSpecialist = styled.p`
+  font-size: 16px;
+  font-weight: bold;
+  color: red;
 `;

@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import logo from "../Images/logo.png";
 import ticket from "../Images/ticket.png";
+import afiliadosphoto from "../Images/afiliadosphoto.png";
 import {
   StyledContainer,
   StyledTextHome,
@@ -19,6 +20,8 @@ import {
   Border,
   MarginRight,
   Titlev2,
+  SpeakSpecialist,
+  StyledSpan
 } from "../StyledComponents";
 import ButtonStartsNow from "../Components/ButtonStartsNow";
 import { Link } from "react-router-dom";
@@ -41,7 +44,7 @@ export default function Home() {
         <hr />
         <StyledTextHome>
           <Titlev2>
-            <span>{textTransform}</span>
+            <StyledSpan>{textTransform}</StyledSpan>
           </Titlev2>
           <StyledContainer>
             <StyledImage src={ticket} alt="ticket" />
@@ -57,6 +60,9 @@ export default function Home() {
           </StyledContainer>
         </StyledTextHome>
         <ButtonStartsNow />
+        <StyledContainer2>
+          <img src={afiliadosphoto} alt="afiliados-photo" />
+        </StyledContainer2>
       </Border>
     </>
   );
