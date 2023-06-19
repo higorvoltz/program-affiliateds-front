@@ -15,6 +15,7 @@ export interface Product {
   price: number;
   comission_value: number;
   productor_id: number;
+  last_sales: number;
 }
 
 export interface ProductsState {
