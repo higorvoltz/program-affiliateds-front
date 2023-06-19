@@ -34,3 +34,5 @@ export const affiliatedDisplay: String = 'Espaço do Afiliado';
 export const clientArea: String = 'Área do Cliente';
 export const helper: String = 'Central de Ajuda';
 export const solutions: String = 'Soluções';
+export const productsData: String = 'Dados dos Produtos';
+export const productsHeader: String = 'id | Nome do Produto | Preço | Valor Comissão | Últimas Vendas';

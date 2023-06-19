@@ -2,7 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getProductors } from "../Requests/Productors/api";
-import { ProductorsState, AffiliatedsState, ClientsState, ProductorAffiliatedsState } from "../Interfaces";
+import {
+  ProductorsState,
+  AffiliatedsState,
+  ClientsState,
+  ProductorAffiliatedsState,
+  ProductsState,
+} from "../Interfaces";
 import {
   Border,
   Margin,
@@ -28,16 +34,22 @@ import {
   creatorsData,
   productorAffiliated,
   productorAffiliatedData,
+  productsData,
+  productsHeader,
 } from "../pt-BR";
 import { getAffiliateds } from "../Requests/Affiliateds/api";
 import { getClients } from "../Requests/Clients/api";
 import { getProductorAffiliateds } from "../Requests/ProductorAffiliateds/api";
+import { getProducts } from "../Requests/Products/api";
 
 function AdminArea(): JSX.Element {
   const [state, setState] = useState<ProductorsState>({ productors: [] });
   const [statev2, setStatev2] = useState<AffiliatedsState>({ affiliateds: [] });
   const [statev3, setStatev3] = useState<ClientsState>({ clients: [] });
-  const [statev4, setStatev4] = useState<ProductorAffiliatedsState>({ productorAffiliateds: [] });
+  const [statev4, setStatev4] = useState<ProductorAffiliatedsState>({
+    productorAffiliateds: [],
+  });
+  const [statev5, setStatev5] = useState<ProductsState>({ products: [] });
 
   useEffect(() => {
     async function fetchData(): Promise<void> {
@@ -67,6 +79,14 @@ function AdminArea(): JSX.Element {
     async function fetchData(): Promise<void> {
       const productorAffiliateds = await getProductorAffiliateds();
       setStatev4({ productorAffiliateds });
+    }
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    async function fetchData(): Promise<void> {
+      const products = await getProducts();
+      setStatev5({ products });
     }
     fetchData();
   }, []);
@@ -135,12 +155,31 @@ function AdminArea(): JSX.Element {
             </ProductHeader>
           </ProductListItemHeader>
           {statev4.productorAffiliateds.map((productorAffiliated, index) => (
-            <ProductListItem key={productorAffiliated.id} even={index % 2 === 0}>
-              idAfiliado: {productorAffiliated.affiliated_id} cadastrado a idProdutor: {productorAffiliated.productor_id}
+            <ProductListItem
+              key={productorAffiliated.id}
+              even={index % 2 === 0}
+            >
+              idAfiliado: {productorAffiliated.affiliated_id} cadastrado a
+              idProdutor: {productorAffiliated.productor_id}
             </ProductListItem>
           ))}
-          </ProductorsList>
-
+        </ProductorsList>
+        <SubTitle>
+          <h3>{productsData}</h3>
+        </SubTitle>
+        <ProductorsList>
+          <ProductListItemHeader>
+            <ProductHeader>
+              <ProductName>{productsHeader}</ProductName>
+            </ProductHeader>
+          </ProductListItemHeader>
+          {statev5.products.map((product, index) => (
+            <ProductListItem key={product.id} even={index % 2 === 0}>
+              {product.id} | {product.name} | {product.price} |{" "}
+              {product.comission_value} | {product.last_sales}
+            </ProductListItem>
+          ))}
+        </ProductorsList>
 
         <Link to="/home">
           <Margin>

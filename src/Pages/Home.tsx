@@ -20,7 +20,6 @@ import {
   Border,
   MarginRight,
   Titlev2,
-  SpeakSpecialist,
   StyledSpan
 } from "../StyledComponents";
 import ButtonStartsNow from "../Components/ButtonStartsNow";
